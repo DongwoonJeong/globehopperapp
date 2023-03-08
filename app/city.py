@@ -6,13 +6,13 @@ import services
 
 
 #Create city
-def createcity(data):
-    services.createcity(data)
+def createcityController(data):
+    services.createcityService(data)
     return jsonify({'message':'Data inserted successfully'})
 
 #Read city
-def allcities():
-    results= services.allcities()
+def allcitiesController():
+    results= services.allcitiesService()
     data = []
     #Converted a list to dictionary
     for row in results:
@@ -28,11 +28,11 @@ def allcities():
     return jsonify(data)
 
 #Update API
-def updatecities(id, data):
-    services.updatecities(id, data)
+def updatecitiesController(id, data):
+    services.updatecitiesService(id, data)
     return jsonify({'message':'city updateed successfully'})
 
 #Delete API
-def deletecities(id):
-    services.deletecities(id)
+def deletecitiesController(id):
+    services.deletecitiesService(id)
     return jsonify({'message':'city delete successfully'})

@@ -6,7 +6,7 @@ import conn
 
 
 #Create API service
-def createcountry(data):
+def createcountryService(data):
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
@@ -26,7 +26,7 @@ def createcountry(data):
 
 #Read API service
 #get all data records from table using sql
-def allcountries():
+def allcountriesService():
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
@@ -41,7 +41,7 @@ def allcountries():
     return results
 
 #Update API service
-def updatecountries(id, data):
+def updatecountriesService(id, data):
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
@@ -62,7 +62,7 @@ def updatecountries(id, data):
 
 #Delete API service
 
-def deletecountries(id):
+def deletecountriesService(id):
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
@@ -83,7 +83,7 @@ def deletecountries(id):
 #CIty APIs
 
 #Create API service
-def createcity(data):
+def createcityService(data):
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
@@ -105,7 +105,7 @@ def createcity(data):
 
 #Read API service
 #get all data records from table using sql
-def allcities():
+def allcitiesService():
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
@@ -120,7 +120,7 @@ def allcities():
     return results
 
 #Update API service
-def updatecities(id, data):
+def updatecitiesService(id, data):
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
@@ -145,7 +145,7 @@ def updatecities(id, data):
 
 #Delete API service
 
-def deletecities(id):
+def deletecitiesService(id):
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()

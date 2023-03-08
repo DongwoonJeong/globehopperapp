@@ -12,23 +12,23 @@ app = Flask(__name__)
 @app.post('/countries')
 def createcountry():
     data=request.json
-    return country.createcountry(data)
+    return country.createcountryController(data)
 
 #Read API
 @app.get('/countries')
 def getallcountries():
-    return country.allcountries()
+    return country.allcountriesController()
 
 #Update API
 @app.put('/countries/<int:id>')
 def updatecountries(id):
     data=request.json
-    return country.updatecountries(id, data)
+    return country.updatecountriesController(id, data)
 
 #Delete API
 @app.delete('/countries/<int:id>')
 def deletecountries(id):
-    return country.deletecountries(id)
+    return country.deletecountriesController(id)
 
 
 
@@ -38,23 +38,23 @@ def deletecountries(id):
 @app.post('/cities')
 def createcity():
     data=request.json
-    return city.createcity(data)
+    return city.createcityController(data)
 
 #Read API
 @app.get('/cities')
 def allcities():
-    return city.allcities()
+    return city.allcitiesController()
 
 #Update API
 @app.put('/cities/<int:id>')
 def updatecities(id):
     data=request.json
-    return city.updatecities(id, data)
+    return city.updatecitiesController(id, data)
 
 #Delete API
 @app.delete('/cities/<int:id>')
 def deletecities(id):
-    return city.deletecities(id)
+    return city.deletecitiesController(id)
 
 #Execute as a script.
 if __name__ == '__main__':

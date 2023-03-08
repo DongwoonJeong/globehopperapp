@@ -6,16 +6,16 @@ import services
 
 
 #Create country
-def createcountry(data):
-    services.createcountry(data)
+def createcountryController(data):
+    services.createcountryService(data)
     return jsonify({'message':'Data inserted successfully'})
 
 
 
 #Function to get all countries and return as json object.
 #Read country
-def allcountries():
-    results= services.allcountries()
+def allcountriesController():
+    results= services.allcountriesService()
     data = []
     #Converted a list to dictionary
     for row in results:
@@ -28,11 +28,11 @@ def allcountries():
     return jsonify(data)
 
 #Update API
-def updatecountries(id, data):
-    services.updatecountries(id, data)
+def updatecountriesController(id, data):
+    services.updatecountriesService(id, data)
     return jsonify({'message':'country updateed successfully'})
 
 #Delete API
-def deletecountries(id):
-    services.deletecountries(id)
+def deletecountriesController(id):
+    services.deletecountriesService(id)
     return jsonify({'message':'country delete successfully'})
