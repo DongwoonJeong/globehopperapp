@@ -42,6 +42,24 @@ def getcountriesbyContinentController(continent):
      return jsonify(data)
 
 
+
+#get details about the capital city of the country
+def getcapitalCityDetailsController(country):
+     results= services.getcapitalCityDetailsService(country)
+     data = []
+    #Converted a list to dictionary
+     for row in results:
+        data.append({
+            "CityId":row[0],
+            "Name":row[1],
+            "CountryId":row[2],
+            "Capital":row[3],
+            "FirstLandmark":row[4],
+            "SecondLandmark":row[5],
+            "ThirdLandmark":row[6]
+        })
+     return jsonify(data)
+
 #Update API
 def updatecountriesController(id, data):
     services.updatecountriesService(id, data)

@@ -24,6 +24,11 @@ def getallcountries():
 def getcountriesbyContinent(continent):
     return country.getcountriesbyContinentController(continent)
 
+#get details about the capital city of the country
+@app.get('/countries/<countryname>/1')
+def getcapitalCityDetails(countryname):
+    return country.getcapitalCityDetailsController(countryname)
+
 #Update API
 @app.put('/countries/<int:id>')
 def updatecountries(id):

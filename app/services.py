@@ -40,20 +40,46 @@ def allcountriesService():
 
     return results
 
+
+#Getting list of countries by continent.
 def getcountriesbyContinentService(continent):
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
 
     #Execute the SQL 
-    values=[continent]
+    
     statement="SELECT * FROM Country WHERE Continent =%s"
+    values=[continent]
     mycursor.execute(statement, values)
+
     results = mycursor.fetchall()
     #Close connection
     mycursor.close()
     conn.myconn.close()
+
     return results
+
+#get Capital city detail by country.
+def getcapitalCityDetailsService(country):
+    #open connection
+    conn.myconn._open_connection()
+    mycursor = conn.myconn.cursor()
+    
+    #Execute the SQL 
+    #statement="SELECT * FROM City WHERE Name=%s"
+    statement="SELECT City.CityId,City.Name, City.CountryId, City.Capital, City.FirstLandmark, City.SecondLandmark, City.ThirdLandmark FROM City JOIN Country ON City.CountryId = Country.CountryId WHERE Country.Name=%s AND City.Capital=1"
+    values=[country]
+    mycursor.execute(statement, values)
+
+    results = mycursor.fetchall()
+    
+    #Close connection
+    mycursor.close()
+    conn.myconn.close()
+
+    return results
+
 
 #Update API service
 def updatecountriesService(id, data):
