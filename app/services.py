@@ -16,8 +16,8 @@ def createcountry(data):
     population=data['Population']
     continent=data['Continent']
     #Execute the SQL
-    mysql = "INSERT INTO Country (CountryId, Name, Population, Continent) VALUES (%s, %s, %s, %s)"
-    values=(countryid,name,population,continent)
+    mysql = "INSERT INTO Country (Name, Population, Continent) VALUES (%s, %s, %s)"
+    values=(name,population,continent)
     mycursor.execute(mysql, values)
 
     #Close connection
@@ -88,7 +88,6 @@ def createcity(data):
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
     
-    cityid=['CityId']
     name=data['Name']
     countryid=data['CountryId']
     capital=data['Capital']
@@ -96,8 +95,8 @@ def createcity(data):
     secondlandmark=data['SecondLandmark']
     thirdlandmark=data['ThirdLandmark']
     #Execute the SQL
-    mysql = "INSERT INTO City (CityId, Name, CountryId, Capital, FirstLandmark, SecondLandmark, ThirdLandmark) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-    values=(cityid, name,countryid,capital,firstlandmark,secondlandmark,thirdlandmark)
+    mysql = "INSERT INTO City (Name, CountryId, Capital, FirstLandmark, SecondLandmark, ThirdLandmark) VALUES (%s, %s, %s, %s, %s, %s)"
+    values = (name,countryid,bool(capital),firstlandmark,secondlandmark,thirdlandmark)
     mycursor.execute(mysql, values)
 
     #Close connection
