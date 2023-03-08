@@ -6,6 +6,12 @@ import country
 #Using Flask framework
 app = Flask(__name__)
 
+#Create = POST API
+@app.post('/countries')
+def createCountry():
+    data=request.json
+    return country.createCountry(data)
+
 #Read API
 @app.get('/countries')
 def getAllCountries():
@@ -14,4 +20,4 @@ def getAllCountries():
 
 #Execute as a script.
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
