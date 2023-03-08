@@ -19,6 +19,11 @@ def createcountry():
 def getallcountries():
     return country.allcountriesController()
 
+#Read country by continent.
+@app.get('/countries/<continent>')
+def getcountriesbyContinent(continent):
+    return country.getcountriesbyContinentController(continent)
+
 #Update API
 @app.put('/countries/<int:id>')
 def updatecountries(id):

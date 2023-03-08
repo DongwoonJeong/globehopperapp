@@ -27,6 +27,21 @@ def allcountriesController():
         })
     return jsonify(data)
 
+#getcountriesbyContinentController
+def getcountriesbyContinentController(continent):
+     results= services.getcountriesbyContinentService(continent)
+     data = []
+    #Converted a list to dictionary
+     for row in results:
+        data.append({
+            "CountryId":row[0],
+            "Name":row[1],
+            "Population":row[2],
+            "Continent":row[3]
+        })
+     return jsonify(data)
+
+
 #Update API
 def updatecountriesController(id, data):
     services.updatecountriesService(id, data)

@@ -40,6 +40,21 @@ def allcountriesService():
 
     return results
 
+def getcountriesbyContinentService(continent):
+    #open connection
+    conn.myconn._open_connection()
+    mycursor = conn.myconn.cursor()
+
+    #Execute the SQL 
+    values=[continent]
+    statement="SELECT * FROM Country WHERE Continent =%s"
+    mycursor.execute(statement, values)
+    results = mycursor.fetchall()
+    #Close connection
+    mycursor.close()
+    conn.myconn.close()
+    return results
+
 #Update API service
 def updatecountriesService(id, data):
     #open connection
