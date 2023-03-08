@@ -6,7 +6,7 @@ import conn
 
 
 #get all data records from table using sql
-def allCountries():
+def allcountries():
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
@@ -20,7 +20,7 @@ def allCountries():
 
     return results
 
-def createCountry(data):
+def createcountry(data):
     #open connection
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()

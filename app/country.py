@@ -4,8 +4,8 @@ from flask import Flask, request, jsonify
 import services
 
 #Function to get all countries and return as json object.
-def allCountries():
-    results= services.allCountries()
+def allcountries():
+    results= services.allcountries()
     data = []
     #Converted a list to dictionary
     for row in results:
@@ -18,6 +18,6 @@ def allCountries():
     return jsonify(data)
 
 #Create country
-def createCountry(data):
-    services.createCountry(data)
+def createcountry(data):
+    services.createcountry(data)
     return jsonify({'message':'Data inserted successfully'})

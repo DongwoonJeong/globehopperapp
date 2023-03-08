@@ -8,14 +8,14 @@ app = Flask(__name__)
 
 #Create = POST API
 @app.post('/countries')
-def createCountry():
+def createcountry():
     data=request.json
-    return country.createCountry(data)
+    return country.createcountry(data)
 
 #Read API
 @app.get('/countries')
-def getAllCountries():
-    return country.allCountries()
+def getallcountries():
+    return country.allcountries()
 
 
 #Execute as a script.
