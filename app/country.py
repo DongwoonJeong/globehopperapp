@@ -3,7 +3,17 @@
 from flask import Flask, request, jsonify
 import services
 
+
+
+#Create country
+def createcountry(data):
+    services.createcountry(data)
+    return jsonify({'message':'Data inserted successfully'})
+
+
+
 #Function to get all countries and return as json object.
+#Read country
 def allcountries():
     results= services.allcountries()
     data = []
@@ -17,7 +27,12 @@ def allcountries():
         })
     return jsonify(data)
 
-#Create country
-def createcountry(data):
-    services.createcountry(data)
-    return jsonify({'message':'Data inserted successfully'})
+#Update API
+def updatecountries(id, data):
+    services.updatecountries(id, data)
+    return jsonify({'message':'country updateed successfully'})
+
+#Delete API
+def deletecountries(id):
+    services.deletecountries(id)
+    return jsonify({'message':'country delete successfully'})
