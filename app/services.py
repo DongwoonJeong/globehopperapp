@@ -30,7 +30,7 @@ def createCountry(data):
     population=data['Population']
     continent=data['Continent']
     #Execute the SQL
-    mysql = mycursor.execute("INSERT INTO Country (CountryId, Name, Population, Continent) VALUES (%s,%s,%s,%s)")
+    mysql = "INSERT INTO Country (CountryId, Name, Population, Continent) VALUES (%s, %s, %s, %s)"
     values=(countryId,name,population,continent)
     mycursor.execute(mysql, values)
 
