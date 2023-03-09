@@ -7,14 +7,14 @@ import city
 #Using Flask framework
 app = Flask(__name__)
 
-#API for Countries
-#Create = POST API
+#Countries API
+#Create country
 @app.post('/countries')
 def createcountry():
     data=request.json
     return country.createcountryController(data)
 
-#Read API
+#Read country
 @app.get('/countries')
 def getallcountries():
     return country.allcountriesController()
@@ -29,13 +29,13 @@ def getcountriesbyContinent(continent):
 def getcapitalCityDetails(countryname):
     return country.getcapitalCityDetailsController(countryname)
 
-#Update API
+#Update country
 @app.put('/countries/<int:id>')
 def updatecountries(id):
     data=request.json
     return country.updatecountriesController(id, data)
 
-#Delete API
+#Delete country
 @app.delete('/countries/<int:id>')
 def deletecountries(id):
     return country.deletecountriesController(id)
