@@ -25,6 +25,7 @@ def getcountriesbyContinent(continent):
     return country.getcountriesbyContinentController(continent)
 
 #get details about the capital city of the country
+#error fixed. originally, /<country>/1 throws error because python does not know what to point. country.py ? or what.
 @app.get('/countries/<countryname>/1')
 def getcapitalCityDetails(countryname):
     return country.getcapitalCityDetailsController(countryname)
