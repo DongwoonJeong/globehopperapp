@@ -20,6 +20,7 @@ def getallcountries():
     return country.allcountriesController()
 
 #Read country by continent.
+#can do <string:continent> too
 @app.get('/countries/<continent>')
 def getcountriesbyContinent(continent):
     return country.getcountriesbyContinentController(continent)
